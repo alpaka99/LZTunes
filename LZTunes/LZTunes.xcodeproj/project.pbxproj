@@ -13,6 +13,7 @@
 		CE32EFC22C651EF700540192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE32EFC12C651EF700540192 /* Assets.xcassets */; };
 		CE32EFC52C651EF700540192 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE32EFC42C651EF700540192 /* Base */; };
 		CE32EFCD2C651F0D00540192 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE32EFCC2C651F0D00540192 /* .gitignore */; };
+		CE32EFD82C65214800540192 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFD72C65214800540192 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE32EFC42C651EF700540192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE32EFC62C651EF700540192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE32EFCC2C651F0D00540192 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CE32EFD72C65214800540192 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		CE32EFD12C6520E000540192 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				CE32EFD62C65213900540192 /* Bases */,
 				CE32EFBC2C651EF600540192 /* ViewController.swift */,
 			);
 			path = Presenters;
@@ -113,6 +116,14 @@
 			children = (
 			);
 			path = Domains;
+			sourceTree = "<group>";
+		};
+		CE32EFD62C65213900540192 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				CE32EFD72C65214800540192 /* BaseView.swift */,
+			);
+			path = Bases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				CE32EFBD2C651EF600540192 /* ViewController.swift in Sources */,
 				CE32EFB92C651EF600540192 /* AppDelegate.swift in Sources */,
 				CE32EFBB2C651EF600540192 /* SceneDelegate.swift in Sources */,
+				CE32EFD82C65214800540192 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

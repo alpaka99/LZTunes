@@ -7,14 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewControllerView: BaseView {
+    
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+final class ViewControllerViewModel: ViewModel {
+    
+}
+
+final class ViewController: BaseViewController<ViewControllerView, ViewControllerViewModel> {
+
+    override func configureNavigationItem() {
+        super.configureNavigationItem()
         
-        view.backgroundColor = .systemBlue
-        navigationItem.title = "VC"
+        navigationItem.title = "BaseView Implemented"
     }
 
 

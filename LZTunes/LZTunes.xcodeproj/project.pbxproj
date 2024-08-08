@@ -57,14 +57,62 @@
 		CE32EFB72C651EF600540192 /* LZTunes */ = {
 			isa = PBXGroup;
 			children = (
+				CE32EFCE2C65209300540192 /* Apps */,
+				CE32EFCF2C65209B00540192 /* Resources */,
+				CE32EFD02C6520A600540192 /* Sources */,
+			);
+			path = LZTunes;
+			sourceTree = "<group>";
+		};
+		CE32EFCE2C65209300540192 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
 				CE32EFB82C651EF600540192 /* AppDelegate.swift */,
 				CE32EFBA2C651EF600540192 /* SceneDelegate.swift */,
-				CE32EFBC2C651EF600540192 /* ViewController.swift */,
-				CE32EFC12C651EF700540192 /* Assets.xcassets */,
 				CE32EFC32C651EF700540192 /* LaunchScreen.storyboard */,
 				CE32EFC62C651EF700540192 /* Info.plist */,
 			);
-			path = LZTunes;
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		CE32EFCF2C65209B00540192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE32EFC12C651EF700540192 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE32EFD02C6520A600540192 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE32EFD52C6520FA00540192 /* Domains */,
+				CE32EFD12C6520E000540192 /* Presenters */,
+				CE32EFD42C6520F000540192 /* Utils */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE32EFD12C6520E000540192 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				CE32EFBC2C651EF600540192 /* ViewController.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		CE32EFD42C6520F000540192 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE32EFD52C6520FA00540192 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domains;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +334,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CZH2CMCGCZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LZTunes/Info.plist;
+				INFOPLIST_FILE = LZTunes/Apps/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LZTunes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -317,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CZH2CMCGCZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LZTunes/Info.plist;
+				INFOPLIST_FILE = LZTunes/Apps/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LZTunes;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

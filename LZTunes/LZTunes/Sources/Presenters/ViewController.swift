@@ -39,9 +39,8 @@ final class ViewController: BaseViewController<ViewControllerView, ViewControlle
         navigationItem.title = viewModel.store.navigationTitle
         view.backgroundColor = viewModel.store.backgroundColor
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.viewModel.testFunction()
-        }
+//        iTunesRouter.search(searchText: "bts").build()
+        NetworkManager.shared.requestCall()
     }
 }
 

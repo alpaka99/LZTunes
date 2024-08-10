@@ -18,6 +18,7 @@
 		CE32EFDE2C65222300540192 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFDD2C65222300540192 /* BaseViewController.swift */; };
 		CE32EFE12C670F2D00540192 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE02C670F2D00540192 /* NetworkManager.swift */; };
 		CE32EFE42C671B0900540192 /* iTunesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE32C671B0900540192 /* iTunesRouter.swift */; };
+		CE32EFE72C67331800540192 /* iTunesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE62C67331800540192 /* iTunesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CE32EFDD2C65222300540192 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CE32EFE02C670F2D00540192 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE32EFE32C671B0900540192 /* iTunesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRouter.swift; sourceTree = "<group>"; };
+		CE32EFE62C67331800540192 /* iTunesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,9 @@
 		CE32EFD42C6520F000540192 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CE32EFE22C671B0200540192 /* Routers */,
 				CE32EFDF2C670F2400540192 /* Managers */,
+				CE32EFE52C67330B00540192 /* Models */,
+				CE32EFE22C671B0200540192 /* Routers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -152,6 +155,14 @@
 				CE32EFE32C671B0900540192 /* iTunesRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		CE32EFE52C67330B00540192 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE32EFE62C67331800540192 /* iTunesResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 				CE32EFBD2C651EF600540192 /* ViewController.swift in Sources */,
 				CE32EFB92C651EF600540192 /* AppDelegate.swift in Sources */,
 				CE32EFE12C670F2D00540192 /* NetworkManager.swift in Sources */,
+				CE32EFE72C67331800540192 /* iTunesResponse.swift in Sources */,
 				CE32EFBB2C651EF600540192 /* SceneDelegate.swift in Sources */,
 				CE32EFD82C65214800540192 /* BaseView.swift in Sources */,
 				CE32EFE42C671B0900540192 /* iTunesRouter.swift in Sources */,

@@ -67,12 +67,3 @@ extension NetworkManager: URLSessionDataDelegate {
     
 }
 
-struct iTunesResponse: Decodable {
-    let resultCount: Int
-    let results: [iTunesResult]
-}
-
-struct iTunesResult: Decodable {
-    let kind: String?
-    let artistViewUrl: String?
-}

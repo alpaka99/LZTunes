@@ -124,10 +124,13 @@ class TestViewModel: ViewModel {
     
     
     func testFunction() {
-        let a: String = store.testInput
-        let b: KeyPath<Input, String> = store.testInput
-        let c: WritableKeyPath<Input, String> = store.testInput
+        let stringTypeInput: String = store.testInput
+        let keyPathTypeInput: KeyPath<Input, String> = store.testInput
+        let writableKeyPathTypeInput: WritableKeyPath<Input, String> = store.testInput
         
+        print(type(of: stringTypeInput))
+        print(type(of: keyPathTypeInput))
+        print(type(of: writableKeyPathTypeInput))
         store.reduce(store.testInput, into: "changed")
     }
 }

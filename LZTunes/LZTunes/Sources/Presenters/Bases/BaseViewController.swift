@@ -28,8 +28,8 @@ class BaseViewController<T: BaseView, V: ViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureBind()
         configureNavigationItem()
+        configureBind()
     }
     
     func configureBind() { }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE32EFB92C651EF600540192 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFB82C651EF600540192 /* AppDelegate.swift */; };
 		CE32EFBB2C651EF600540192 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFBA2C651EF600540192 /* SceneDelegate.swift */; };
-		CE32EFBD2C651EF600540192 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFBC2C651EF600540192 /* ViewController.swift */; };
+		CE32EFBD2C651EF600540192 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFBC2C651EF600540192 /* SearchViewController.swift */; };
 		CE32EFC22C651EF700540192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE32EFC12C651EF700540192 /* Assets.xcassets */; };
 		CE32EFC52C651EF700540192 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE32EFC42C651EF700540192 /* Base */; };
 		CE32EFCD2C651F0D00540192 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE32EFCC2C651F0D00540192 /* .gitignore */; };
@@ -19,13 +19,18 @@
 		CE32EFE12C670F2D00540192 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE02C670F2D00540192 /* NetworkManager.swift */; };
 		CE32EFE42C671B0900540192 /* iTunesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE32C671B0900540192 /* iTunesRouter.swift */; };
 		CE32EFE72C67331800540192 /* iTunesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE62C67331800540192 /* iTunesResponse.swift */; };
+		CE32EFEA2C673FDF00540192 /* iTunesRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFE92C673FDF00540192 /* iTunesRespository.swift */; };
+		CE32EFED2C67401B00540192 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE32EFEC2C67401B00540192 /* RxCocoa */; };
+		CE32EFEF2C67401B00540192 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE32EFEE2C67401B00540192 /* RxSwift */; };
+		CE32EFF22C6747A500540192 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFF12C6747A500540192 /* SearchViewModel.swift */; };
+		CE32EFF42C6747AD00540192 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFF32C6747AD00540192 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE32EFB52C651EF600540192 /* LZTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE32EFB82C651EF600540192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE32EFBA2C651EF600540192 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE32EFBC2C651EF600540192 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE32EFBC2C651EF600540192 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE32EFC12C651EF700540192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE32EFC42C651EF700540192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE32EFC62C651EF700540192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		CE32EFE02C670F2D00540192 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE32EFE32C671B0900540192 /* iTunesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRouter.swift; sourceTree = "<group>"; };
 		CE32EFE62C67331800540192 /* iTunesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesResponse.swift; sourceTree = "<group>"; };
+		CE32EFE92C673FDF00540192 /* iTunesRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRespository.swift; sourceTree = "<group>"; };
+		CE32EFF12C6747A500540192 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CE32EFF32C6747AD00540192 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE32EFEF2C67401B00540192 /* RxSwift in Frameworks */,
+				CE32EFED2C67401B00540192 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +118,8 @@
 		CE32EFD12C6520E000540192 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				CE32EFF02C67479C00540192 /* Search */,
 				CE32EFD62C65213900540192 /* Bases */,
-				CE32EFBC2C651EF600540192 /* ViewController.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 		CE32EFD52C6520FA00540192 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				CE32EFE92C673FDF00540192 /* iTunesRespository.swift */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
@@ -165,6 +176,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CE32EFF02C67479C00540192 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CE32EFF32C6747AD00540192 /* SearchView.swift */,
+				CE32EFF12C6747A500540192 /* SearchViewModel.swift */,
+				CE32EFBC2C651EF600540192 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +202,10 @@
 			dependencies = (
 			);
 			name = LZTunes;
+			packageProductDependencies = (
+				CE32EFEC2C67401B00540192 /* RxCocoa */,
+				CE32EFEE2C67401B00540192 /* RxSwift */,
+			);
 			productName = LZTunes;
 			productReference = CE32EFB52C651EF600540192 /* LZTunes.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +234,9 @@
 				Base,
 			);
 			mainGroup = CE32EFAC2C651EF600540192;
+			packageReferences = (
+				CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = CE32EFB62C651EF600540192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE32EFF22C6747A500540192 /* SearchViewModel.swift in Sources */,
 				CE32EFDC2C65221400540192 /* ViewModel.swift in Sources */,
-				CE32EFBD2C651EF600540192 /* ViewController.swift in Sources */,
+				CE32EFEA2C673FDF00540192 /* iTunesRespository.swift in Sources */,
+				CE32EFBD2C651EF600540192 /* SearchViewController.swift in Sources */,
+				CE32EFF42C6747AD00540192 /* SearchView.swift in Sources */,
 				CE32EFB92C651EF600540192 /* AppDelegate.swift in Sources */,
 				CE32EFE12C670F2D00540192 /* NetworkManager.swift in Sources */,
 				CE32EFE72C67331800540192 /* iTunesResponse.swift in Sources */,
@@ -465,6 +496,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE32EFEC2C67401B00540192 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CE32EFEE2C67401B00540192 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE32EFAD2C651EF600540192 /* Project object */;
 }

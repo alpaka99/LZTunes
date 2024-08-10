@@ -14,9 +14,8 @@ final class NetworkManager: NSObject {
     
     private var buffer: Data?
     
-    func requestCall() {
-        let urlRequest = iTunesRouter
-            .search(searchText: "apple")
+    func requestCall(router: Router) {
+        let urlRequest = router
             .build()
         if let urlRequest = urlRequest {
             let session = URLSession(

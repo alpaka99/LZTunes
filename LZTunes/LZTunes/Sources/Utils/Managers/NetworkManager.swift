@@ -12,7 +12,7 @@ final class NetworkManager: NSObject {
     
     override private init() { }
     
-    var buffer: Data?
+    private var buffer: Data?
     
     func requestCall() {
         let urlRequest = iTunesRouter
@@ -52,7 +52,7 @@ extension NetworkManager: URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: (any Error)?) {
         guard error == nil else {
-            print("URLSession Data Task Error: \(error)")
+            print("URLSession Data Task Error: \(String(describing: error))")
             return
         }
         

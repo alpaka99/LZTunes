@@ -16,7 +16,7 @@ final class SearchViewModel: ViewModel {
     }
     
     struct Output: Outputable {
-        
+        var searchResult: PublishSubject<[iTunesResult]> = PublishSubject()
     }
     
     init() {
@@ -29,10 +29,12 @@ final class SearchViewModel: ViewModel {
     
     func bind() {
         store.searchActionRequested
+            .bind(to: repository.searchText)
+            .disposed(by: disposeBag)
+        
+        repository.searchResult
             .debug()
-            .bind(with: self) { owner, value in
-                owner.repository.calliTunesAPI(of: iTunesRouter.search(searchText: value))
-            }
+            .bind(to: store.searchResult)
             .disposed(by: disposeBag)
     }
 }

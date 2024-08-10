@@ -23,6 +23,12 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "request", style: .plain, target: nil, action: nil)
     }
     
+    override func configureDelegate() {
+        super.configureDelegate()
+        
+        baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "test")
+    }
+    
     override func configureBind() {
         super.configureBind()
         
@@ -37,6 +43,13 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
             .withLatestFrom(searchBar.rx.text.orEmpty)
             .bind(to: viewModel.store.searchActionRequested)
             .disposed(by: disposeBag)
+        
+        viewModel.store.searchResult
+            .bind(to: baseView.tableView.rx.items(cellIdentifier: "test", cellType: UITableViewCell.self)) { row, item, cell in
+                cell.textLabel?.text = item.artistViewUrl
+            }
+            .disposed(by: disposeBag)
+            
     }
 }
 

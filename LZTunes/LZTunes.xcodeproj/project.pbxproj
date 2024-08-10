@@ -24,6 +24,7 @@
 		CE32EFEF2C67401B00540192 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE32EFEE2C67401B00540192 /* RxSwift */; };
 		CE32EFF22C6747A500540192 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFF12C6747A500540192 /* SearchViewModel.swift */; };
 		CE32EFF42C6747AD00540192 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32EFF32C6747AD00540192 /* SearchView.swift */; };
+		CE32EFF72C67615200540192 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE32EFF62C67615200540192 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE32EFF72C67615200540192 /* SnapKit in Frameworks */,
 				CE32EFEF2C67401B00540192 /* RxSwift in Frameworks */,
 				CE32EFED2C67401B00540192 /* RxCocoa in Frameworks */,
 			);
@@ -205,6 +207,7 @@
 			packageProductDependencies = (
 				CE32EFEC2C67401B00540192 /* RxCocoa */,
 				CE32EFEE2C67401B00540192 /* RxSwift */,
+				CE32EFF62C67615200540192 /* SnapKit */,
 			);
 			productName = LZTunes;
 			productReference = CE32EFB52C651EF600540192 /* LZTunes.app */;
@@ -236,6 +239,7 @@
 			mainGroup = CE32EFAC2C651EF600540192;
 			packageReferences = (
 				CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CE32EFF52C67615200540192 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = CE32EFB62C651EF600540192 /* Products */;
 			projectDirPath = "";
@@ -506,6 +510,14 @@
 				minimumVersion = 6.7.1;
 			};
 		};
+		CE32EFF52C67615200540192 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -518,6 +530,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		CE32EFF62C67615200540192 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE32EFF52C67615200540192 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

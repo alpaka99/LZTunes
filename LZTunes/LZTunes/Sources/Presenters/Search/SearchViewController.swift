@@ -70,8 +70,12 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
         viewModel.store.detailViewURL
             .bind(with: self) { owner, data in
                 if let collectionViewUrl = data {
-                    print(collectionViewUrl)
-
+                    let detailSearchViewModel = DetailSearchViewModel()
+                    detailSearchViewModel.store.detailViewURL.onNext(collectionViewUrl)
+                    
+                    let detailSearchViewController = DetailSearchViewController(baseView: DetailSearchView(), viewModel: detailSearchViewModel)
+                    
+                    owner.navigationController?.pushViewController(detailSearchViewController, animated: true)
                 }
             }
             .disposed(by: disposeBag)

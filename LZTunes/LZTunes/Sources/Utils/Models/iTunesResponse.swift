@@ -11,6 +11,9 @@ struct iTunesResponse: Decodable {
 }
 
 struct iTunesResult: Decodable {
-    let kind: String?
-    let artistViewUrl: String?
+    let trackName: String
+    let artworkUrl30: String
+    let artworkUrl100: String
+    let artistViewUrl: String
+    let collectionViewUrl: String?
 }

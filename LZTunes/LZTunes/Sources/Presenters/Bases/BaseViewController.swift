@@ -28,10 +28,12 @@ class BaseViewController<T: BaseView, V: ViewModel>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureBind()
         configureNavigationItem()
+        configureDelegate()
+        configureBind()
     }
     
     func configureBind() { }
     func configureNavigationItem() { }
+    func configureDelegate() { }
 }

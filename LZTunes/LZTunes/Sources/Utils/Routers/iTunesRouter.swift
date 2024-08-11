@@ -43,13 +43,11 @@ enum iTunesRouter: Router {
     
     
     func build() -> URLRequest? {
-        let requestType = Self.search(searchText: "apple")
-        
-        let url = requestType.baseURL
+        let url = self.baseURL
         
         var components = URLComponents(string: url)
-        components?.path = requestType.path
-        components?.queryItems = requestType.queryItems
+        components?.path = self.path
+        components?.queryItems = self.queryItems
         
         
         if let composedURL = components?.url {

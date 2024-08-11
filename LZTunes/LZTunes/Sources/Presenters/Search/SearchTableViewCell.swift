@@ -36,13 +36,12 @@ final class SearchTableViewCell: BaseTableViewCell {
         super.configureLayout()
         
         thumbnailImage.snp.makeConstraints { img in
-//            img.verticalEdges.equalTo(self)
-//                .inset(8)
+
             img.leading.equalTo(self.snp.leading)
                 .offset(8)
-            img.size.equalTo(44)
-            img.verticalEdges.equalTo(self)
-                .inset(8)
+            img.size.equalTo(50)
+//            img.verticalEdges.equalTo(self)
+//                .inset(8)
         }
         
         musicNameLabel.snp.makeConstraints { label in

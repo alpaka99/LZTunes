@@ -28,7 +28,7 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
         super.configureDelegate()
         
         baseView.tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
-        baseView.tableView.rowHeight = 50
+        baseView.tableView.delegate = self
     }
     
     override func configureBind() {
@@ -82,3 +82,12 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
     }
 }
 
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
+    }
+}

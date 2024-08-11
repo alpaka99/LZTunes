@@ -34,7 +34,8 @@ enum iTunesRouter: Router {
         switch self {
         case .search(searchText: let searchText):
             let queryItems = [
-                URLQueryItem(name: "term", value: searchText)
+                URLQueryItem(name: "term", value: searchText),
+                URLQueryItem(name: "media", value: "music")
             ]
             
             return queryItems

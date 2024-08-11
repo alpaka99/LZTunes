@@ -35,7 +35,7 @@ enum iTunesRouter: Router {
         case .search(searchText: let searchText):
             let queryItems = [
                 URLQueryItem(name: "term", value: searchText),
-                URLQueryItem(name: "media", value: "music")
+                URLQueryItem(name: "media", value: "music"),
             ]
             
             return queryItems
@@ -53,6 +53,7 @@ enum iTunesRouter: Router {
         
         if let composedURL = components?.url {
             let request = URLRequest(url: composedURL)
+            print(request.url)
             return request
         }
         

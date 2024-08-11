@@ -35,8 +35,10 @@ final class iTunesRepository {
             .bind(with: self) { owner, completeStatus in
                 switch completeStatus {
                 case .complete(let data):
-                    let decodedData = try! JSONDecoder().decode(iTunesResponse.self, from: data)
-                    owner.searchResult.onNext(decodedData.results)
+                    let decodedData = try? JSONDecoder().decode(iTunesResponse.self, from: data)
+                    if let decodedData = decodedData {
+                        owner.searchResult.onNext(decodedData.results)
+                    }
                 case .error(let error):
                     print("Error", error)
                 }

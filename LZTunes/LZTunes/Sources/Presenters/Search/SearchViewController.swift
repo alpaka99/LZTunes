@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import RxCocoa
 import RxSwift
 
@@ -26,7 +27,8 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
     override func configureDelegate() {
         super.configureDelegate()
         
-        baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "test")
+        baseView.tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
+        baseView.tableView.rowHeight = 50
     }
     
     override func configureBind() {
@@ -45,11 +47,17 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
             .disposed(by: disposeBag)
         
         viewModel.store.searchResult
-            .bind(to: baseView.tableView.rx.items(cellIdentifier: "test", cellType: UITableViewCell.self)) { row, item, cell in
-                cell.textLabel?.text = item.artistViewUrl
+            .bind(to: baseView.tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { row, item, cell in
+                cell.thumbnailImage.kf.setImage(with: URL(string:item.artworkUrl100))
+                cell.musicNameLabel.text = item.trackName
             }
             .disposed(by: disposeBag)
-            
+        
+        baseView.tableView.rx.itemSelected
+            .bind(with: self, onNext: { owner, indexPath in
+                owner.baseView.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

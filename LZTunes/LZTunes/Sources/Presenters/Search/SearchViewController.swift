@@ -53,10 +53,27 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
             }
             .disposed(by: disposeBag)
         
+        
         baseView.tableView.rx.itemSelected
             .bind(with: self, onNext: { owner, indexPath in
                 owner.baseView.tableView.deselectRow(at: indexPath, animated: true)
             })
+            .disposed(by: disposeBag)
+        
+        baseView.tableView.rx.modelSelected(iTunesResult.self)
+            .bind(with: self) { owner, data in
+                owner.viewModel.store.selectedData.onNext(data)
+            }
+            .disposed(by: disposeBag)
+        
+        
+        viewModel.store.detailViewURL
+            .bind(with: self) { owner, data in
+                if let collectionViewUrl = data {
+                    print(collectionViewUrl)
+
+                }
+            }
             .disposed(by: disposeBag)
     }
 }

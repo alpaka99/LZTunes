@@ -13,10 +13,12 @@ final class SearchViewModel: ViewModel {
     
     struct Input: Inputable {
         var searchActionRequested: PublishSubject<String> = PublishSubject()
+        var selectedData: PublishSubject<iTunesResult> = PublishSubject()
     }
     
     struct Output: Outputable {
-        var searchResult: PublishSubject<[iTunesResult]> = PublishSubject()
+        var searchResult: PublishRelay<[iTunesResult]> = PublishRelay()
+        var detailViewURL: PublishRelay<String?> = PublishRelay()
     }
     
     init() {
@@ -35,6 +37,11 @@ final class SearchViewModel: ViewModel {
         repository.searchResult
             .debug()
             .bind(to: store.searchResult)
+            .disposed(by: disposeBag)
+        
+        store.selectedData
+            .map { $0.collectionViewUrl }
+            .bind(to: store.detailViewURL)
             .disposed(by: disposeBag)
     }
 }

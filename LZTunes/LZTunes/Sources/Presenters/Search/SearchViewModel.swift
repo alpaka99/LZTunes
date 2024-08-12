@@ -8,8 +8,7 @@
 import RxCocoa
 import RxSwift
 
-final class SearchViewModel: ViewModel {
-    let disposeBag = DisposeBag()
+final class SearchViewModel: RxViewModel {
     
     struct Input: Inputable {
         var searchActionRequested: PublishSubject<String> = PublishSubject()
@@ -21,15 +20,12 @@ final class SearchViewModel: ViewModel {
         var detailViewURL: PublishRelay<String?> = PublishRelay()
     }
     
-    init() {
-        bind()
-    }
     
     var store = ViewStore(input: Input(), output: Output())
     
     let repository = iTunesRepository()
     
-    func bind() {
+    override func configureBind() {
         store.searchActionRequested
             .bind(to: repository.searchText)
             .disposed(by: disposeBag)

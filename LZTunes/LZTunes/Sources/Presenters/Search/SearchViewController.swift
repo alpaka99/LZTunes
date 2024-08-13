@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import RxCocoa
 import RxSwift
+import Toast
 
 final class SearchViewController: BaseViewController<SearchView, SearchViewModel> {
     
@@ -83,8 +84,9 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
         
         viewModel.store.toastMessage
             .debug()
-            .bind(with: self) { owner, message in
-                
+            .asDriver(onErrorJustReturn: "")
+            .drive(with: self) { owner, message in
+                owner.baseView.makeToast(message, duration: 3.0 ,title: "쵸비상!", image: UIImage(named: "toast"))
             }
             .disposed(by: disposeBag)
     }

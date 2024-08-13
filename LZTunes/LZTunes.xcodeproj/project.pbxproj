@@ -31,6 +31,7 @@
 		CE32F0012C690FB300540192 /* DetailSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32F0002C690FB300540192 /* DetailSearchView.swift */; };
 		CE32F0032C69113F00540192 /* DetailSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32F0022C69113F00540192 /* DetailSearchViewModel.swift */; };
 		CE32F0052C6912E100540192 /* DetailSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32F0042C6912E100540192 /* DetailSearchViewController.swift */; };
+		CE32F01D2C6ADDE300540192 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CE32F01C2C6ADDE300540192 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 				CE32EFFE2C69060900540192 /* Kingfisher in Frameworks */,
 				CE32EFF72C67615200540192 /* SnapKit in Frameworks */,
 				CE32EFEF2C67401B00540192 /* RxSwift in Frameworks */,
+				CE32F01D2C6ADDE300540192 /* Toast in Frameworks */,
 				CE32EFED2C67401B00540192 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +236,7 @@
 				CE32EFEE2C67401B00540192 /* RxSwift */,
 				CE32EFF62C67615200540192 /* SnapKit */,
 				CE32EFFD2C69060900540192 /* Kingfisher */,
+				CE32F01C2C6ADDE300540192 /* Toast */,
 			);
 			productName = LZTunes;
 			productReference = CE32EFB52C651EF600540192 /* LZTunes.app */;
@@ -267,6 +270,7 @@
 				CE32EFEB2C67401B00540192 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CE32EFF52C67615200540192 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE32EFFC2C69060900540192 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CE32F01B2C6ADDE300540192 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = CE32EFB62C651EF600540192 /* Products */;
 			projectDirPath = "";
@@ -558,6 +562,14 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		CE32F01B2C6ADDE300540192 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -580,6 +592,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE32EFFC2C69060900540192 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		CE32F01C2C6ADDE300540192 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE32F01B2C6ADDE300540192 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

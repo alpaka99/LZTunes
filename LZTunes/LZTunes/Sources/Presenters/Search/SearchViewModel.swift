@@ -18,6 +18,7 @@ final class SearchViewModel: RxViewModel {
     struct Output: Outputable {
         var searchResult: PublishRelay<[iTunesResult]> = PublishRelay()
         var detailViewURL: PublishRelay<String?> = PublishRelay()
+        var toastMessage = PublishSubject<String>()
     }
     
     
@@ -38,6 +39,10 @@ final class SearchViewModel: RxViewModel {
         store.selectedData
             .map { $0.collectionViewUrl }
             .bind(to: store.detailViewURL)
+            .disposed(by: disposeBag)
+        
+        repository.toastMessage
+            .bind(to: store.toastMessage)
             .disposed(by: disposeBag)
     }
 }

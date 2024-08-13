@@ -17,6 +17,8 @@ final class iTunesRepository {
     
     var searchResult: PublishSubject<[iTunesResult]> = PublishSubject()
     
+    var toastMessage = PublishSubject<String>()
+    
     init() {
         bind()
     }
@@ -27,10 +29,11 @@ final class iTunesRepository {
                 iTunesRouter.search(searchText: $0)
             }
             .debug()
-//            .bind(to: NetworkManager.shared.router)
-            .flatMap {
+//            .bind(to: NetworkManager.shared.router) // for Using URLSession DataTask
+            .flatMap {[weak self] in
                 NetworkManager.shared.requestCallWithSingle(router: $0)
                     .catch { error in // .failure를 통한 error는 여기서 걸러냄
+                        self?.toastMessage.onNext("다운로드 에러!")
                         return Single<Data>.never()
                     }
             }
@@ -38,6 +41,8 @@ final class iTunesRepository {
                 let decodedData = try? JSONDecoder().decode(iTunesResponse.self, from: data)
                 if let decodedData = decodedData {
                     owner.searchResult.onNext(decodedData.results)
+                } else {
+                    owner.toastMessage.onNext("디코딩 에러!")
                 }
             })
             .disposed(by: disposeBag)

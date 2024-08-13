@@ -79,6 +79,14 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
                 }
             }
             .disposed(by: disposeBag)
+        
+        
+        viewModel.store.toastMessage
+            .debug()
+            .bind(with: self) { owner, message in
+                
+            }
+            .disposed(by: disposeBag)
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 import RxSwift
 
-final class DetailSearchViewModel: ViewModel {
+final class DetailSearchViewModel: RxViewModel {
     struct Input: Inputable {
         var detailViewURL = BehaviorSubject(value: "")
     }

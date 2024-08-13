@@ -5,6 +5,7 @@
 //  Created by user on 8/9/24.
 //
 
+import RxSwift
 
 // MARK: ViewStore Implmentation
 
@@ -105,32 +106,48 @@ protocol ViewModel {
     associatedtype Input: Inputable
     associatedtype Output: Outputable
     
-    var store: ViewStore<Input, Output> { get set }
+    var store: ViewStore<Input, Output> { get }
+    var disposeBag: DisposeBag { get }
 }
+
+
+// MARK: BaseViewModelRequirements
+protocol ViewModelRequirements {
+    init()
+    
+    func configureBind()
+}
+
+class BaseViewModel: ViewModelRequirements {
+    required init() {
+        configureBind()
+    }
+    
+    let disposeBag = DisposeBag()
+    
+    func configureBind() { }
+}
+
+typealias RxViewModel = BaseViewModel & ViewModel
 
 /*
  Example Usage
 */
-class TestViewModel: ViewModel {
+final class ExampleViewModel: RxViewModel {
+    
     struct Input: Inputable {
-        var testInput = "input"
+        var testInput = Observable.just("input")
     }
     
     struct Output: Outputable {
-        var testOutput = 123
+        var testOutput = PublishSubject<String>()
     }
     
     var store = ViewStore(input: Input(), output: Output())
     
-    
-    func testFunction() {
-        let stringTypeInput: String = store.testInput
-        let keyPathTypeInput: KeyPath<Input, String> = store.testInput
-        let writableKeyPathTypeInput: WritableKeyPath<Input, String> = store.testInput
-        
-        print(type(of: stringTypeInput))
-        print(type(of: keyPathTypeInput))
-        print(type(of: writableKeyPathTypeInput))
-        store.reduce(store.testInput, into: "changed")
+    override func configureBind() {
+        store.testInput
+            .bind(to: store.testOutput)
+            .disposed(by: disposeBag)
     }
 }

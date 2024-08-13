@@ -27,6 +27,39 @@ final class NetworkManager: NSObject {
     
     var completeStatus: PublishSubject<CompleteStatus> = PublishSubject()
     
+    func requestCallWithSingle(router: Router) -> Single<Data> {
+        let urlRequest = router
+            .build()
+        return Single.create { observer in
+            guard let urlRequest = urlRequest else { observer(.failure(DownloadError.error))
+                return Disposables.create()
+            }
+                URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                    guard error == nil else { observer(.failure(DownloadError.error))
+                        return
+                    }
+                    
+                    guard let response = response as? HTTPURLResponse, (200..<300).contains(response.statusCode) else {
+                        observer(.failure(DownloadError.error))
+                        return
+                    }
+                    
+                    guard let data = data else {
+                        observer(.failure(DownloadError.error))
+                        return
+                    }
+                    
+                    observer(.success(data))
+                }
+                .resume()
+            
+            return Disposables.create()
+        }
+        
+       
+
+    }
+    
     func bind() {
         router
             .debug()

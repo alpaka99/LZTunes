@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import RxCocoa
 import RxSwift
+import Toast
 
 final class SearchViewController: BaseViewController<SearchView, SearchViewModel> {
     
@@ -79,15 +80,24 @@ final class SearchViewController: BaseViewController<SearchView, SearchViewModel
                 }
             }
             .disposed(by: disposeBag)
+        
+        
+        viewModel.store.toastMessage
+            .debug()
+            .asDriver(onErrorJustReturn: "")
+            .drive(with: self) { owner, message in
+                owner.baseView.makeToast(message, duration: 3.0 ,title: "쵸비상!", image: UIImage(named: "toast"))
+            }
+            .disposed(by: disposeBag)
     }
 }
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 60
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66
+        return 80
     }
 }

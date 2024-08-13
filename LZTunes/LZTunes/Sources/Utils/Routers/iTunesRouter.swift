@@ -53,7 +53,6 @@ enum iTunesRouter: Router {
         
         if let composedURL = components?.url {
             let request = URLRequest(url: composedURL)
-            print(request.url)
             return request
         }
         

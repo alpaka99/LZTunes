@@ -40,8 +40,7 @@ final class SearchTableViewCell: BaseTableViewCell {
             img.leading.equalTo(self.snp.leading)
                 .offset(8)
             img.size.equalTo(50)
-//            img.verticalEdges.equalTo(self)
-//                .inset(8)
+            img.centerY.equalTo(self.snp.centerY)
         }
         
         musicNameLabel.snp.makeConstraints { label in
